@@ -1,0 +1,21 @@
+MINDHARBOR 3.0 — FROM YOUR EXISTING GITHUB PAGES WEBSITE
+
+Version 3 needs a server for live AI, unlike V1/V2.
+
+FASTEST FULL-STACK ROUTE:
+  1. Upload the extracted V3 project files to a GitHub repo.
+  2. Open https://dashboard.render.com/ and create a Web Service from that repo.
+  3. Node runtime; Build: npm install --omit=dev ; Start: npm start.
+  4. Add your private OPENAI_API_KEY in Render Environment only.
+  5. Deploy and visit your Render HTTPS website.
+
+TO KEEP YOUR CURRENT GITHUB PAGES LINK:
+  1. First deploy the backend to Render as above.
+  2. Set ALLOWED_ORIGINS=https://sayanpal-create.github.io in Render Environment.
+  3. In config.js set window.MINDHARBOR_API_BASE to your exact Render HTTPS URL.
+  4. Upload/commit the V3 frontend files into your existing mindharbor repo.
+  5. Keep your GitHub Pages Actions workflow, then test the familiar URL.
+
+Full details: docs/DEPLOY.md
+
+CLINICAL STATUS: For prototype/educational testing only. No clinical review or real-world validation done. Do not use to assess real patients yet.

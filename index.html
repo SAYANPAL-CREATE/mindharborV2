@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8f7">
+  <meta name="description" content="MindHarbor: a private, guided mental wellbeing check-in with clear symptom screening results and supportive next steps.">
+  <title>MindHarbor 3.0 — Make space for how you feel</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V10Z"/><path d="M9 21v-8h6v8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4.2-1.1L3 20l1.2-4.3A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8 11.5h8M8 15h5"/></symbol>
+    <symbol id="i-report" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v5h5M8 12h7M8 16h7"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.5 1.5m11.2 11.2 1.5 1.5M2 12h2m16 0h2M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 2 8 4v6c0 5-3 8-8 10-5-2-8-5-8-10V6l8-4Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.8 7.2L21 11l-7.2 1.8L12 20l-1.8-7.2L3 11l7.2-1.8L12 2ZM19 18l.6 1.4L21 20l-1.4.6L19 22l-.6-1.4L17 20l1.4-.6L19 18Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.7 5.7a5 5 0 0 0-7.1 0L12 7.3l-1.6-1.6a5 5 0 0 0-7.1 7.1 7.1 0 0 0 0 9.1L12 22l8.7-7.2a7.1 7.1 0 0 0 0-9.1Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 17v4h16v-4"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6zM18 12h.01"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 16.7A9 9 0 0 1 7.3 4a9 9 0 1 0 12.7 12.7Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="m12 2 10 18H2L12 2Z"/><path d="M12 9v5m0 3h.01"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2m3 0-1 15H6L5 6M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M5 5 19 19M19 5 5 19"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-restart" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 6M3 4v7h7"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M13 4h7v7M10 14 20 4M20 14v6H4V4h6"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><span></span><span></span><span></span></span><div><strong>mindharbor<span class="brand-period">.</span></strong><small>your space to feel heard</small></div></div>
+      <p class="sidebar-caption">WORKSPACE</p>
+      <nav class="nav-links" aria-label="Main navigation">
+        <button class="nav-btn active" type="button" data-view="home" aria-current="page"><svg><use href="#i-home"/></svg> Overview</button>
+        <button class="nav-btn" type="button" data-view="chat"><svg><use href="#i-chat"/></svg> Talk to Mindy <span class="nav-pill">GUIDED</span></button>
+        <button class="nav-btn" type="button" data-view="report"><svg><use href="#i-report"/></svg> My wellbeing report</button>
+        <button class="nav-btn" type="button" data-view="toolkit"><svg><use href="#i-heart"/></svg> Care toolkit</button>
+      </nav>
+      <p class="sidebar-caption sidebar-caption-secondary">YOUR ACCOUNT</p>
+      <nav class="nav-links" aria-label="Settings">
+        <button class="nav-btn" type="button" data-view="privacy"><svg><use href="#i-shield"/></svg> Privacy &amp; data</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="support-tile"><span class="support-icon"><svg><use href="#i-heart"/></svg></span><strong>Support is within reach</strong><p>Need someone to talk to? Trained counsellors are available.</p><a href="tel:14416">Call Tele-MANAS · 14416 <svg><use href="#i-arrow"/></svg></a></div>
+        <div class="device-note"><svg><use href="#i-lock"/></svg><span id="storageStatus">Private by default · not saved</span></div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+      <header class="topbar">
+        <div class="topbar-left"><button type="button" class="icon-btn mobile-menu" id="mobileMenu" aria-label="Open navigation" aria-expanded="false"><svg><use href="#i-menu"/></svg></button><span class="breadcrumb">MindHarbor <span>/</span> <strong id="breadcrumbPage">Overview</strong></span></div>
+        <div class="topbar-right"><span class="today-label" id="todayText"></span><button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme"><svg><use href="#i-moon"/></svg></button><button class="help-cta" type="button" id="helpButton"><svg><use href="#i-heart"/></svg> Get support</button></div>
+      </header>
+
+      <section class="view active" id="view-home" aria-labelledby="homeTitle">
+        <div class="home-intro"><div><p class="eyebrow"><span class="eyebrow-dot"></span> MINDHARBOR 3.0 · A LITTLE SPACE FOR YOU</p><h1 id="homeTitle">How are you feeling <em>today?</em></h1><p>Your feelings matter. Take a quiet moment to check in with yourself, explore what's on your mind, and find a next step that feels right.</p></div><div class="intro-icon" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M60 18C37 2 14 22 21 43c-24 9-18 43 10 47 0 26 35 31 43 8 26 2 36-27 16-42 18-21-4-47-30-38Z" fill="#caeae3"/><path d="M36 61c9-21 22 21 33-1 6-12 13-10 19-5" fill="none" stroke="#438f82" stroke-width="4" stroke-linecap="round"/><circle cx="45" cy="42" r="5" fill="#7ebaaa"/><circle cx="80" cy="80" r="4" fill="#7ebaaa"/></svg></div></div>
+        <div class="hero-card"><div class="hero-copy"><span class="hero-tag"><svg><use href="#i-spark"/></svg> YOUR PERSONAL WELLBEING COMPANION</span><h2>A kinder way to<br><i>understand yourself.</i></h2><p>Have an adaptive conversation with Mindy, complete trusted symptom screeners, and explore a carefully explained wellbeing report with supportive next steps.</p><div class="hero-actions"><button class="primary-btn" type="button" id="startCheckin">Begin adaptive check-in <svg><use href="#i-arrow"/></svg></button><span class="hero-duration"><svg><use href="#i-clock"/></svg> About 8–12 minutes</span></div></div><div class="hero-art" aria-hidden="true"><div class="art-halo halo-one"></div><div class="art-halo halo-two"></div><div class="art-plant"><svg viewBox="0 0 300 250"><path d="M137 218c-8-74-42-100-55-131m58 130c5-87 32-129 61-155m-63 135c-5-42-36-61-61-68m61 43c16-36 43-50 76-63" fill="none" stroke="#27675d" stroke-width="5" stroke-linecap="round"/><path d="M80 90c-42-13-39-46-42-46 31-3 52 10 42 46ZM198 61c-5-36 18-47 43-48-3 30-21 47-43 48ZM77 130c-34-2-50-29-48-42 25-3 48 9 48 42ZM211 109c-3-30 20-44 45-45-5 31-22 45-45 45Z" fill="#8dcbbb"/><path d="M150 224c-27-22-32-53-24-75 28 7 45 28 24 75Z" fill="#b5ded0"/><path d="M129 224c-33-2-54-22-57-48 27-3 54 16 57 48Z" fill="#6cad9e"/><ellipse cx="150" cy="233" rx="91" ry="8" fill="#75afa1" opacity=".23"/></svg></div><div class="art-bubble bubble-1">✦ A moment to pause</div><div class="art-bubble bubble-2"><span class="bubble-heart">♥</span> Feelings are valid</div></div></div>
+        <div class="section-heading"><div><span class="eyebrow muted">GENTLE STEPS FORWARD</span><h2>Here's how it works</h2></div><span class="section-side">Take it at your own pace</span></div>
+        <div class="steps-grid"><article class="step-card"><div class="step-symbol soft-blue"><svg><use href="#i-chat"/></svg></div><span class="step-number">01 / SHARE</span><h3>Talk it through</h3><p>Your answers shape the next reflection question, then you complete standard symptom checkers.</p></article><article class="step-card"><div class="step-symbol soft-peach"><svg><use href="#i-report"/></svg></div><span class="step-number">02 / UNDERSTAND</span><h3>See your insights</h3><p>Explore symptom-check scores and a transparent explanation of what they mean.</p></article><article class="step-card"><div class="step-symbol soft-lavender"><svg><use href="#i-heart"/></svg></div><span class="step-number">03 / CARE</span><h3>Find your next step</h3><p>Get self-care ideas and guidance on when professional support may help.</p></article></div>
+        <div class="homepage-footnote"><svg><use href="#i-shield"/></svg><p><strong>A note about your care:</strong> MindHarbor is an adult self-check and reflection tool, not a diagnosis, therapist, or emergency service. You can always seek help, regardless of your results.</p></div>
+      </section>
+
+      <section class="view" id="view-chat" aria-labelledby="chatTitle" hidden>
+        <div class="view-heading chat-page-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> A SAFE SPACE TO REFLECT</p><h1 id="chatTitle">Your conversation <em>with Mindy.</em></h1><p>Your words guide the next reflection question. You can skip anything; no camera, microphone or behavior monitoring.</p></div><button class="secondary-btn small" type="button" id="restartChat"><svg><use href="#i-restart"/></svg> New session</button></div>
+        <div class="chat-layout">
+          <div class="chat-panel"><div class="chat-panel-head"><div class="avatar Mindy-avatar" aria-hidden="true">✳</div><div><strong>Mindy <span class="assistant-caption">· adaptive companion</span></strong><small><span class="online-dot"></span> Here to listen, not diagnose</small></div><span class="ai-mode-pill" id="aiModePill" role="status">Checking AI…</span></div>
+            <label class="v3-consent"><input type="checkbox" id="aiConsent"><span><strong>Enable live AI-assisted reflections (18+)</strong><small>By enabling, I confirm I am 18 or older and agree that my written reflections and question history will be sent to the backend and AI provider. No API key is stored here. If off, local rules are used. Not for emergencies.</small></span></label>
+            <div class="v3-engine-notice" id="engineNotice" role="status">Checking AI availability. You can always use the local check-in.</div>
+            <div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-relevant="additions text"></div>
+            <div class="chat-options" id="chatOptions" aria-label="Response options"></div>
+            <form class="chat-compose" id="chatForm"><label class="sr-only" for="chatInput">Your message to Mindy</label><input id="chatInput" type="text" maxlength="1000" autocomplete="off" placeholder="Share what's on your mind…"><button class="send-btn" type="submit" aria-label="Send message"><svg><use href="#i-arrow"/></svg></button></form>
+            <p class="chat-caveat"><svg><use href="#i-shield"/></svg> Automated research prototype. No clinician monitors messages. AI may misunderstand or miss risk.</p>
+          </div>
+          <aside class="chat-aside"><div class="aside-card insight-card" aria-label="Adaptive conversation insights">
+            <div class="insight-head"><span class="insight-orb" aria-hidden="true">✧</span><div><div class="aside-label" id="insightPhase">HOW Mindy ADAPTS</div><strong>Your conversation, your pace</strong></div></div>
+            <div class="insight-topline"><span>Reflection path</span><strong id="adaptiveCount">0 / 7</strong></div><div class="adaptive-steps" id="adaptiveSteps" aria-hidden="true"></div>
+            <span class="insight-caption">Themes you mentioned</span><div class="insight-tags" id="insightTags"><span class="insight-tag neutral">No themes assumed yet</span></div>
+            <div class="insight-explain"><span class="explain-spark">✧</span><p id="insightReason">Questions can use AI-assisted topic selection only with your permission.</p></div>
+            <p class="v3-uncertainty" id="v3Uncertainty">Model uncertainty: Not available. Text interpretations can be incorrect.</p><p class="insight-disclaimer">AI-assisted or local fallback · no emotion diagnosis · topic labels can be wrong</p>
+          </div><div class="aside-card progress-card"><div class="aside-label">YOUR CHECK-IN</div><div class="progress-label-row"><strong id="progressTitle">Ready when you are</strong><span id="progressPercent">0%</span></div><div class="progress-track"><span id="progressFill"></span></div><p id="progressDetail">7 adaptive reflections followed by standard symptom checks.</p><button id="asideBegin" type="button" class="text-link-btn">Start guided check-in <svg><use href="#i-arrow"/></svg></button></div><div class="aside-card gentle-card"><span class="gentle-icon">✦</span><h3>A reminder for today</h3><p>You don't have to have everything figured out to take a helpful next step.</p><div class="gentle-lines" aria-hidden="true"><span></span><span></span><span></span></div></div><div class="aside-card safety-aside"><svg><use href="#i-alert"/></svg><div><strong>Need urgent support?</strong><p>If you feel unsafe, contact local emergency services. In India: <a href="tel:112">112</a>. Mental health support: <a href="tel:14416">14416</a>.</p></div></div></aside>
+        </div>
+      </section>
+
+      <section class="view" id="view-report" aria-labelledby="reportTitle" hidden>
+        <div class="view-heading report-page-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> PERSONAL WELLBEING SNAPSHOT</p><h1 id="reportTitle">Your wellbeing <em>report.</em></h1><p>Clear information, thoughtful guidance, and space for your next step.</p></div><div class="report-actions"><button class="secondary-btn small" id="exportJSON" type="button" disabled><svg><use href="#i-download"/></svg> Export data</button><button class="primary-btn small" id="printReport" type="button" disabled><svg><use href="#i-print"/></svg> Save as PDF</button></div></div>
+        <div id="reportEmpty" class="empty-state"><div class="empty-illustration" aria-hidden="true"><svg><use href="#i-report"/></svg></div><h2>Your story is still unfolding</h2><p>Complete a guided check-in to see your depression, anxiety, and stress symptom indicators, alongside recommendations.</p><button class="primary-btn" type="button" id="emptyStart">Start my check-in <svg><use href="#i-arrow"/></svg></button></div>
+        <div id="reportContent" hidden>
+          <div class="report-meta"><span id="reportDate"></span><span class="report-meta-type">Adult self-report · educational</span></div>
+          <div class="scores-grid" id="scoresGrid"></div>
+          <div class="report-main-grid"><article class="report-card evaluation-card"><div class="card-kicker"><svg><use href="#i-spark"/></svg> OVERALL EVALUATION</div><div class="evaluation-header"><div class="assessment-icon" id="evaluationIcon">✦</div><div><h2 id="evaluationHeading"></h2><p id="evaluationSubheading"></p></div></div><div class="evaluation-reason" id="evaluationReason"></div><div class="report-note">These are screening indications, not a diagnosis or prediction of your future mental health.</div></article><article class="report-card nextstep-card"><div class="card-kicker"><svg><use href="#i-heart"/></svg> PROFESSIONAL SUPPORT</div><h2 id="consultTitle"></h2><p id="consultBody"></p><div id="consultAction" class="consult-action"></div></article></div>
+          <article class="report-card conversation-summary" id="reportThemes" hidden><div class="card-kicker"><svg><use href="#i-spark"/></svg> ADAPTIVE CONVERSATION</div><h2>What you chose to talk about</h2><p>Tentative conversation themes, from AI-assisted routing or local text cues. Not a diagnosis, clinical assessment, or verified model explanation.</p><div class="insight-tags" id="reportThemeTags"></div></article>
+          <article class="report-card recommendations-card"><div class="card-kicker"><svg><use href="#i-sun"/></svg> SMALL STEPS, REAL SUPPORT</div><h2>Suggestions for your wellbeing</h2><div id="recommendationList" class="recommendation-grid"></div></article>
+          <article class="report-card score-guide"><h3>How to read your scores</h3><p><strong>Depression:</strong> PHQ-9, score out of 27. <strong>Anxiety:</strong> GAD-7, score out of 21. <strong>Stress:</strong> exploratory four-question check, score out of 12 (not clinically validated). Percentages show points earned divided by the maximum possible points, <strong>not the probability of having a condition</strong>. Your results should be discussed with a qualified clinician if you have concerns.</p><p id="reportImpact"></p><p class="guide-reference">Sources: <a href="https://site.thoracic.org/assemblies/pr/outcome-measures/anxiety-and-depression-outcome-measures" target="_blank" rel="noopener noreferrer">PHQ-9 &amp; GAD-7 scoring guidance <svg><use href="#i-external"/></svg></a> · <a href="https://dghs.mohfw.gov.in/national-mental-health-programme.php" target="_blank" rel="noopener noreferrer">Tele-MANAS <svg><use href="#i-external"/></svg></a></p></article>
+          <div class="print-footer">MindHarbor · Self-report educational screening · Not a medical diagnosis · Not for emergency use</div>
+        </div>
+      </section>
+
+      <section class="view" id="view-toolkit" aria-labelledby="toolkitTitle" hidden>
+        <div class="view-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR EVERYDAY CARE SPACE</p><h1 id="toolkitTitle">Little moments of <em>calm.</em></h1><p>Simple exercises to help you pause, connect, and care for yourself. They don't replace professional treatment.</p></div></div>
+        <div class="toolkit-grid"><article class="tool-card breathing-card"><div class="tool-top"><span class="tool-badge">BREATHING EXERCISE</span><span class="tool-duration">4 · 4 · 6</span></div><h2>Find your breathing rhythm</h2><p>Gently breathe in for 4 seconds, hold for 4, and breathe out for 6. If breath-holding feels uncomfortable, skip it.</p><div class="breath-zone"><div class="breath-orb" id="breathOrb"><span id="breathText">Ready</span><small id="breathSeconds">Start when comfortable</small></div></div><div class="breath-actions"><button type="button" id="breathToggle" class="primary-btn"><svg><use href="#i-play"/></svg> Start breathing</button><button type="button" id="breathReset" class="secondary-btn"><svg><use href="#i-restart"/></svg> Reset</button></div></article>
+          <article class="tool-card grounding-card"><div class="tool-top"><span class="tool-badge">GROUNDING EXERCISE</span><span class="tool-duration">5 · 4 · 3 · 2 · 1</span></div><h2>Come back to the present</h2><p>Notice the world around you, one sense at a time. Click through the grounding prompts at your own pace.</p><div class="grounding-step" id="groundingStep"><strong id="groundingNumber">5</strong><div><span id="groundingSense">THINGS YOU CAN SEE</span><p id="groundingPrompt">Look around and name five things you can see.</p></div></div><div class="grounding-dots" id="groundingDots" aria-hidden="true"></div><div class="grounding-actions"><button type="button" id="groundingNext" class="primary-btn">Next sense <svg><use href="#i-arrow"/></svg></button><button type="button" id="groundingReset" class="secondary-btn">Start over</button></div></article></div>
+        <div class="section-heading toolkit-section"><div><span class="eyebrow muted">PRACTICAL SELF-CARE</span><h2>More ways to support yourself</h2></div></div>
+        <div class="microcare-grid"><article><div class="microcare-icon">☀</div><h3>Get some daylight</h3><p>A short walk or a few minutes outside may help you reconnect with your surroundings.</p></article><article><div class="microcare-icon">☾</div><h3>Create a sleep routine</h3><p>Try a consistent sleep and wake time and a gentler wind-down before bed.</p></article><article><div class="microcare-icon">♡</div><h3>Reach out</h3><p>A message to someone you trust can be a meaningful first step. You don't need a perfect explanation.</p></article></div>
+      </section>
+
+      <section class="view" id="view-privacy" aria-labelledby="privacyTitle" hidden>
+        <div class="view-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOU'RE IN CONTROL</p><h1 id="privacyTitle">Your space. <em>Your data.</em></h1><p>Your wellbeing is personal. In V3, live AI is optional; written reflections are transmitted to a model provider only after you opt in.</p></div></div>
+        <div class="privacy-layout"><article class="report-card privacy-card"><div class="privacy-large-icon"><svg><use href="#i-lock"/></svg></div><h2>Privacy by design, with limits.</h2><p>The scoring stays in your browser. By default, the adaptive interview uses local rules. If you explicitly enable AI, your reflections and limited question history are sent via our server to the configured AI provider for analysis. The app does not intentionally store transcripts in a database or log message bodies. Your hosting and AI providers may process or retain data according to their policies; do not enter identifying patient information.</p><div class="privacy-divider"></div><div class="toggle-setting"><div><strong>Remember completed reports on this device</strong><p>Optional. Stores your last report locally in this browser without encryption. Avoid on shared computers.</p></div><label class="switch"><input type="checkbox" id="saveToggle" role="switch"><span class="switch-slider"></span><span class="sr-only">Save completed reports locally</span></label></div><div class="privacy-button-row"><button type="button" class="secondary-btn" id="deleteData"><svg><use href="#i-trash"/></svg> Clear all local data</button><button type="button" class="secondary-btn" id="downloadData"><svg><use href="#i-download"/></svg> Export my report</button></div><div class="status-inline" id="privacyMessage" role="status"></div></article>
+          <article class="report-card privacy-details"><div class="card-kicker">PLEASE KNOW</div><h2>Built for transparency</h2><div class="detail-row"><svg><use href="#i-check"/></svg><span>This code includes no analytics, advertising trackers, or account system.</span></div><div class="detail-row"><svg><use href="#i-check"/></svg><span>AI is optional and uses a server-side API key. The backend selects only from the authored question bank. Without AI consent it uses local rules.</span></div><div class="detail-row"><svg><use href="#i-check"/></svg><span>No login or profile required.</span></div><div class="detail-row"><svg><use href="#i-alert"/></svg><span>Local storage is unencrypted and can be accessed by others using the same browser profile.</span></div><div class="detail-row"><svg><use href="#i-alert"/></svg><span>Clearing browser data, private mode, or switching devices may erase saved information.</span></div><div class="detail-row"><svg><use href="#i-alert"/></svg><span>Clinical review of the question bank and real-world validation have NOT been completed. Not a regulated medical device, clinical or emergency service.</span></div></article></div>
+      </section>
+      <footer class="page-footer"><span>© <span id="yearText"></span> MindHarbor · Made for gentler self-reflection</span><span>Not a medical device · For adults (18+) · <a href="tel:14416">India support 14416</a></span></footer>
+    </main>
+  </div>
+  <div class="mobile-backdrop" id="mobileBackdrop" hidden></div>
+
+  <div class="modal-backdrop" id="supportModal" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="supportModalTitle"><button type="button" id="supportClose" class="icon-btn modal-close" aria-label="Close support information"><svg><use href="#i-close"/></svg></button><div class="modal-icon"><svg><use href="#i-heart"/></svg></div><h2 id="supportModalTitle">Real people can help.</h2><p>If you think you might hurt yourself or cannot stay safe, contact emergency services or go to the nearest emergency department now. If you can, tell a trusted person and stay with them.</p><div class="contact-options"><a class="contact-emergency" href="tel:112"><strong>Emergency services</strong><span>India · Call 112 <svg><use href="#i-arrow"/></svg></span></a><a href="tel:14416"><strong>Tele-MANAS · emotional support</strong><span>India · Call 14416 · 24/7 <svg><use href="#i-arrow"/></svg></span></a></div><small>Outside India, call your local emergency number or a local crisis line. This chat isn't monitored by a clinician.</small></div></div>
+  <script src="logic.js"></script>
+  <script src="adaptive.js"></script>
+  <script src="config.js"></script>
+  <script src="v3-client.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

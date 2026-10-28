@@ -1,0 +1,15 @@
+{
+  "name": "mindharbor-v3",
+  "version": "3.0.0",
+  "private": true,
+  "description": "MindHarbor adaptive wellbeing research prototype \u2014 optional server-side language model",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js && node tests/test-scoring.js && node tests/test-adaptive.js",
+    "evaluate:synthetic": "node evaluation/evaluate-local.js"
+  },
+  "license": "UNLICENSED"
+}
